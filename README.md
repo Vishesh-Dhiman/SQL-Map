@@ -20,6 +20,12 @@ SQLMap Command Generator is a web-based application designed to assist penetrati
 - Python 3.x.
 - Firefox (for opening the SQLMap interface).
 
+
+## Web Usage Live
+
+https://acorzo1983.github.io/SQLMapCG/
+
+
 ## Installation & Usage
 
 To install and run the application, follow these steps:
