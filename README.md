@@ -1,5 +1,5 @@
-
 # SQLMap Command Generator
+<img alt="SQLMap Command Generator" src="image_sqlmapcg.GIF"> </img>
 
 ## Description
 
