@@ -6,12 +6,13 @@
     <title>SQLMap Command Generator</title>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script type="module" src="js/main.js"></script>
 </head>
 <body>
     <div class="container">
         <header class="header">
             <h1 class="title">SQLMap Command Generator</h1>
-            <button class="theme-toggle" onclick="toggleTheme()">
+            <button class="theme-toggle" id="theme-toggle">
                 <span class="theme-icon">🌓</span>
                 <span class="theme-text">Toggle Theme</span>
             </button>
@@ -44,6 +45,25 @@
             </div>
 
             <div class="card">
+                <h2>Crawling Options
+                    <span class="tooltip">
+                        <span class="info-icon">?</span>
+                        <span class="tooltiptext">Configure website crawling settings.</span>
+                    </span>
+                </h2>
+                <div class="form-group">
+                    <label for="crawl-depth">Crawl Depth:</label>
+                    <input type="number" id="crawl-depth" min="1" value="1">
+                </div>
+                <div class="form-group">
+                    <label for="crawl-exclude">Exclude Pattern:</label>
+                    <input type="text" id="crawl-exclude" placeholder="logout|admin|disconnect">
+                </div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
                 <h2>Connection Options
                     <span class="tooltip">
                         <span class="info-icon">?</span>
@@ -63,6 +83,29 @@
                 <div class="form-group">
                     <label for="proxy">Proxy:</label>
                     <input type="text" id="proxy" placeholder="http://127.0.0.1:8080">
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Optimization Options
+                    <span class="tooltip">
+                        <span class="info-icon">?</span>
+                        <span class="tooltiptext">Configure performance settings.</span>
+                    </span>
+                </h2>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="optimize">
+                        <label for="optimize">Optimize (-o)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="keep-alive">
+                        <label for="keep-alive">Keep-Alive</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="threads">Threads:</label>
+                    <input type="number" id="threads" min="1" max="10" value="1">
                 </div>
             </div>
         </div>
@@ -202,22 +245,30 @@
                         <label for="flush-session">Flush Session</label>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="tamper">Tamper Scripts:</label>
+                    <input type="text" id="tamper" placeholder="space2comment,between">
+                </div>
             </div>
         </div>
 
-        <button onclick="generateCommand()">Generate Command</button>
+        <button id="generate-btn" class="generate-btn">Generate Command</button>
         
-        <div class="card">
-            <h2>Generated Command</h2>
-            <div id="output"></div>
-            <button class="copy-btn" onclick="copyCommand()">Copy Command</button>
+        <div class="card output-card">
+            <h2>Generated Command
+                <span class="tooltip">
+                    <span class="info-icon">?</span>
+                    <span class="tooltiptext">The generated SQLMap command based on your selections. Click 'Copy Command' to copy to clipboard.</span>
+                </span>
+            </h2>
+            <div id="output" class="output"></div>
+            <button class="copy-btn" id="copy-btn">Copy Command</button>
         </div>
 
         <footer class="footer">
-            <p>SQLmap Generator Made with Love by Albert C 2024 @yz9yt</p>
-            <p class="version">Version 1.0.0</p>
+            <p>SQLmap Generator Made with Love by Albert C 2024</p>
+            <p class="version">Version 1.1.0</p>
         </footer>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>

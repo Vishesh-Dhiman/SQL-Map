@@ -6,6 +6,7 @@
   --accent: #1e8b1e;
   --border: #2a2f3a;
   --shadow: rgba(0, 255, 0, 0.1);
+  --tooltip-bg: rgba(26, 31, 43, 0.95);
 }
 
 .light {
@@ -16,6 +17,7 @@
   --accent: #2ea043;
   --border: #e1e4e8;
   --shadow: rgba(0, 0, 0, 0.1);
+  --tooltip-bg: rgba(255, 255, 255, 0.95);
 }
 
 * {
@@ -120,8 +122,8 @@ input[type="number"] {
 }
 
 .info-icon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -130,7 +132,7 @@ input[type="number"] {
   font-size: 12px;
   margin-left: 0.5rem;
   cursor: help;
-  position: relative;
+  color: var(--text-primary);
 }
 
 .tooltip {
@@ -143,21 +145,36 @@ input[type="number"] {
   visibility: hidden;
   position: absolute;
   z-index: 1;
-  width: 200px;
-  background: var(--bg-secondary);
+  width: 250px;
+  background: var(--tooltip-bg);
   color: var(--text-primary);
   text-align: center;
-  padding: 0.5rem;
+  padding: 0.75rem;
   border-radius: 4px;
   border: 1px solid var(--border);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   left: 50%;
   transform: translateX(-50%);
   bottom: 125%;
+  box-shadow: 0 2px 4px var(--shadow);
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
 }
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+  opacity: 1;
+}
+
+.tooltiptext::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--border) transparent transparent transparent;
 }
 
 button {
@@ -175,6 +192,13 @@ button:hover {
   opacity: 0.9;
 }
 
+.generate-btn {
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
 #output {
   background: var(--bg-primary);
   padding: 1rem;
@@ -183,6 +207,14 @@ button:hover {
   white-space: pre-wrap;
   word-break: break-all;
   border: 1px solid var(--border);
+  min-height: 60px;
+}
+
+.copy-btn {
+  width: 100%;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--accent);
 }
 
 .footer {
