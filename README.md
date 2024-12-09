@@ -23,7 +23,7 @@ SQLMap Command Generator is a web-based application designed to assist penetrati
 
 ## Web Usage Live
 
-https://acorzo1983.github.io/SQLMapCG/
+https://vishesh-dhiman.github.io/SQL-Map/
 
 
 ## Installation & Usage
@@ -33,19 +33,19 @@ To install and run the application, follow these steps:
 0. **OneLiner Automatic Install and Run**:
 
 ```bash
-git clone https://github.com/Acorzo1983/SQLMapCG.git && cd SQLMapCG && chmod +x run.sh && ./run.sh
+git clone https://github.com/Vishesh-Dhiman/SQL-Map.git && cd SQLMapCG && chmod +x run.sh && ./run.sh
 ```
 
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/Acorzo1983/SQLMapCG.git
+   git clone https://github.com/Vishesh-Dhiman/SQL-Map.git
    ```
 
 2. **Navigate to the project directory**:
 
    ```bash
-   cd SQLMapCG
+   cd SQL-Map
    ```
 
 3. **Make the `run.sh` script executable**:
@@ -81,4 +81,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Made with ❤️ by Albert C (2024)
+Made with ❤️ by Unknown (2024)
